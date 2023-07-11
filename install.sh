@@ -1,11 +1,20 @@
 #!/usr/bin/env zsh
 
-# Change working directory to the script directory
-cd "${0%/*}"
+# Check requirements
+if ! type git > /dev/null; then
+    >&2 echo "Git not found"
+    exit 1
+fi
 
-# Prompt to install oh-my-zsh
-echo "Make sure to install git and Oh-My-Zsh first. Press enter to continue...";
-read -k1 -s
+if [ ! -d ~/.oh-my-zsh ] ; then
+    >&2 echo "Oh-my-zsh not found"
+    exit 2
+fi
+
+# Clone project
+cd ~
+git clone git@github.com:nxu/dotfiles.git
+cd dotfiles
 
 # Create global .gitignore
 cp sh/global-gitignore ~/.gitignore
