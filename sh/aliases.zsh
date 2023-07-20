@@ -5,6 +5,7 @@ alias pt='php artisan test --parallel'
 alias cs='./vendor/bin/phpcs'
 alias pint='./vendor/bin/pint'
 alias pd='./vendor/bin/pint --dirty'
+alias pstan='./vendor/bin/phpstan analyse -c phpstan.neon'
 alias gbuild='npm run build && git add . && git commit -m "📦 Build assets"'
 
 # Git
