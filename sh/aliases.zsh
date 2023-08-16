@@ -7,6 +7,7 @@ alias pint='./vendor/bin/pint'
 alias pd='./vendor/bin/pint --dirty'
 alias pstan='./vendor/bin/phpstan analyse -c phpstan.neon'
 alias gbuild='npm run build && git add . && git commit -m "📦 Build assets"'
+alias pest='./vendor/bin/pest'
 
 # Git
 alias nah='git reset --hard;git clean -df'
