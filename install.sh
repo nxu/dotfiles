@@ -24,6 +24,10 @@ git config --global core.excludesfile ~/.gitignore
 cp sh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 . ~/.zshrc
 
+# Create path file
+cp sh/paths.zsh ~/.oh-my-zsh/custom/paths.zsh
+. ~/.zshrc
+
 # Create code directory if doesnt exist
 mkdir ~/code 2> /dev/null || true
 
