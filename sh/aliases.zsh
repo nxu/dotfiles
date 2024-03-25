@@ -2,12 +2,16 @@
 alias art='php artisan'
 alias t='php artisan test'
 alias pt='php artisan test --parallel'
+alias pu='./vendor/bin/phpunit'
 alias cs='./vendor/bin/phpcs'
 alias pint='./vendor/bin/pint'
 alias pd='./vendor/bin/pint --dirty'
-alias pstan='./vendor/bin/phpstan analyse -c phpstan.neon'
+alias pstan='./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit 1G'
 alias gbuild='npm run build && git add . && git commit -m "📦 Build assets"'
 alias pest='./vendor/bin/pest'
+alias dep='./vendor/bin/dep'
+alias ppp='pd && pest --parallel && pstan'
+alias pppp='pd && pest --parallel && pstan && npm run prettier'
 
 # Git
 alias nah='git reset --hard;git clean -df'
@@ -38,3 +42,10 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 # Restart touch bar
 alias touchbar="killall ControlStrip"
+
+# aws (CloudFlare r2)
+alias aws='aws --endpoint-url https://7fc55ceb847a4e089064a9e2022a2808.eu.r2.cloudflarestorage.com'
+
+# Music
+alias flac2mp3='find . -name "*.flac" -exec ffmpeg -i {} -ab 320k -map_metadata 0 -id3v2_version 3 {file:r}.mp3 \;'
+alias mp3ize='(){ ffmpeg -i $1 -codec:a libmp3lame -b:a 320k $1.mp3;}'
