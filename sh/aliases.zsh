@@ -12,10 +12,12 @@ alias pest='./vendor/bin/pest'
 alias dep='./vendor/bin/dep'
 alias ppp='pd && pest --parallel && pstan'
 alias pppp='pd && pest --parallel && pstan && npm run prettier'
+alias gdep='/Users/nxu/.composer/vendor/bin/dep'
 
 # Git
 alias nah='git reset --hard;git clean -df'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias garchive='(){ git archive -o update.zip HEAD $(git diff --name-only $1 HEAD --diff-filter=ACMRTUXB) ;}'
 
 # General
 alias c='cd ~/code'
@@ -41,7 +43,7 @@ alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" u
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Restart touch bar
-alias touchbar="killall ControlStrip"
+alias touchbar="sudo pkill TouchBarServer && sudo killall ControlStrip"
 
 # aws (CloudFlare r2)
 alias aws='aws --endpoint-url https://7fc55ceb847a4e089064a9e2022a2808.eu.r2.cloudflarestorage.com'
@@ -49,3 +51,8 @@ alias aws='aws --endpoint-url https://7fc55ceb847a4e089064a9e2022a2808.eu.r2.clo
 # Music
 alias flac2mp3='find . -name "*.flac" -exec ffmpeg -i {} -ab 320k -map_metadata 0 -id3v2_version 3 {file:r}.mp3 \;'
 alias mp3ize='(){ ffmpeg -i $1 -codec:a libmp3lame -b:a 320k $1.mp3;}'
+
+# Misc
+alias geoavg="pbpaste | grep -oE '([0-9,]+)' | sed 's/,//g' | datamash mean 1"
+alias geocp="pbpaste | grep -oE '([0-9,]+)' | sed 's/,//g' | tac | pbcopy"
+
