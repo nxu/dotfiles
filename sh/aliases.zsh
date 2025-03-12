@@ -13,6 +13,7 @@ alias dep='./vendor/bin/dep'
 alias ppp='pd && pest --parallel && pstan'
 alias pppp='pd && pest --parallel && pstan && npm run prettier'
 alias gdep='/Users/nxu/.composer/vendor/bin/dep'
+alias vcomposer1='COMPOSER_MEMORY_LIMIT=-1 COMPOSER_HOME=~/.composer1 valet php /usr/local/bin/composer1'
 
 # Git
 alias nah='git reset --hard;git clean -df'
