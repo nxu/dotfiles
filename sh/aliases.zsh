@@ -55,4 +55,4 @@ alias mp3ize='(){ ffmpeg -i $1 -codec:a libmp3lame -b:a 320k $1.mp3;}'
 # Misc
 alias geoavg="pbpaste | grep -oE '([0-9,]+)' | sed 's/,//g' | datamash mean 1"
 alias geocp="pbpaste | grep -oE '([0-9,]+)' | sed 's/,//g' | tac | pbcopy"
-
+alias ipinfo="(){curl https://ipinfo.io/$1}"
