@@ -1,1 +1,1 @@
-export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/:/Users/nxu/dotfiles/bin"

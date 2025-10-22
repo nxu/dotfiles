@@ -11,24 +11,20 @@ if [ ! -d ~/.oh-my-zsh ] ; then
     exit 2
 fi
 
-# Clone project
-cd ~
-git clone git@github.com:nxu/dotfiles.git
-cd dotfiles
-
 # Create global .gitignore
 cp sh/global-gitignore ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
 
 # Create aliases file
 cp sh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-. ~/.zshrc
 
 # Create path file
 cp sh/paths.zsh ~/.oh-my-zsh/custom/paths.zsh
-. ~/.zshrc
 
 # Create code directory if doesnt exist
 mkdir ~/code 2> /dev/null || true
+
+# Add chmod+x to scripts
+chmod +x ~/dotfiles/bin/nxu-backup
 
 echo "Done. Run \`. ~/.zshrc\`"
