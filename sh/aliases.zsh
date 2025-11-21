@@ -15,6 +15,9 @@ alias pppp='pd && pest --parallel && pstan && npm run prettier'
 alias gdep='/Users/nxu/.composer/vendor/bin/dep'
 alias vcomposer1='COMPOSER_MEMORY_LIMIT=-1 COMPOSER_HOME=~/.composer1 valet php /usr/local/bin/composer1'
 
+alias php71='/opt/homebrew/opt/php@7.1/bin/php'
+alias php73='/opt/homebrew/opt/php@7.3/bin/php'
+
 # Git
 alias nah='git reset --hard;git clean -df'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
