@@ -8,4 +8,4 @@ scp "root@hetzner.nxu.hu:/root/backup/$NOW.tar.gz" ~/Documents/hetzner.nxu.hu/
 
 ssh root@hetzner.nxu.hu "rm -rf /root/backup/${NOW} /root/backup/${NOW}.tar.gz" >&-
 
-ssh root@hetzner.nxu.hu "podman stop picoshare && sqlite3 /tmp/picoshare/store.db 'VACUUM' && podman start picoshare" >& -
+ssh root@hetzner.nxu.hu "docker stop picoshare && sqlite3 /tmp/picoshare/store.db 'VACUUM' && docker start picoshare" >& -
